@@ -6,6 +6,7 @@
 
 - BDN9
 - Aurora Corne
+- Sofle
 
 ## Setup
 
@@ -32,6 +33,12 @@ zmk download
 - Click the "Flash" button in QMK Toolbox.
 
 ### Aurora Corne:
+
+- Connect each side of the keyboard using a cable.
+- Double tap the reset button.
+- Drop the correctly named firmware (left/right) to the new disc that appears to be mounted on the desktop.
+
+### Sofle:
 
 - Connect each side of the keyboard using a cable.
 - Double tap the reset button.

@@ -1,0 +1,12 @@
+// layers
+#define QWERTY 0
+#define SYSCTL 1
+#define SYMBOL 2
+#define NUMBER 3
+#define KBCTL  4
+
+// keys
+#define ______ &trans
+
+#define HYPER    LS(LC(LA(LGUI)))
+#define HYP(key) LS(LC(LA(LG(key))))
