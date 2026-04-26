@@ -21,44 +21,24 @@
 		
 		qwerty_layer {
 			display-name = "qwerty";
-			//  ┌─────────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬───────┐
-			//  │    `    │  1  │  2  │  3  │  4  │  5  │                    │  6  │  7  │  8  │  9  │  0  │       │
-			//  ├─────────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼───────┤
-			//  │   TAB   │  Q  │  W  │  E  │  R  │  T  │                    │  Y  │  U  │  I  │  O  │  P  │ BKSPC │
-			//  ├─────────┼─────┼─────┼─────╆━━━━━╅─────┤                    ├─────╆━━━━━╅─────┼─────┼─────┼───────┤
-			//  │ ESC/CTL │  A  │  S  │  D  ┃  F  ┃  G  │   ╭───────╮        │  H  ┃  J  ┃  K  │  L  │  ;  │   '   │
-			//  ├─────────┼─────┼─────┼─────╄━━━━━╃─────┤   │ VOL↻ │        ├─────╄━━━━━╃─────┼─────┼─────┼───────┤
-			//  │  SHIFT  │  Z  │  X  │  C  │  V  │  B  │   │ MUTE  │        │  N  │  M  │  ,  │  .  │  /  │ SHIFT │
-			//  └─────────┴┬────┴┬────┴┬────┴┬────┴┬────┘   ╰───────╯   ┌────┴┬────┴┬────┴┬────┴┬────┴┬────┴───────┘
-			//             │ GUI │ ALT │CTRL │LOWER│ENTER│              │SPACE│RAISE│CTRL │ ALT │ GUI │
-			//             └─────┴─────┴─────┴─────┴─────┘              └─────┴─────┴─────┴─────┴─────┘
+			//  ┌─────────┬─────┬─────┬─────┬─────┬─────┐                            ┌─────┬─────┬─────┬─────┬─────┬───────┐
+			//  │   NUM   │  1  │  2  │  3  │  4  │  5  │                            │  6  │  7  │  8  │  9  │  0  │  F12  │
+			//  ├─────────┼─────┼─────┼─────┼─────┼─────┤                            ├─────┼─────┼─────┼─────┼─────┼───────┤
+			//  │   TAB   │  Q  │  W  │  E  │  R  │  T  │                            │  Y  │  U  │  I  │  O  │  P  │       │
+			//  ├─────────┼─────┼─────┼─────╆━━━━━╅─────┤   ╭───────╮    ╭───────╮   ├─────╆━━━━━╅─────┼─────┼─────┼───────┤
+			//  │ ESC/CTL │  A  │  S  │  D  ┃  F  ┃  G  │   │ VOL↻ │    │ SPOT  │   │  H  ┃  J  ┃  K  │  L  │  ;  │ ENTER │
+			//  ├─────────┼─────┼─────┼─────╄━━━━━╃─────┤   │ MUTE  │    │ VOL↻ │   ├─────╄━━━━━╃─────┼─────┼─────┼───────┤
+			//  │  SHIFT  │  Z  │  X  │  C  │  V  │  B  │   ╰───────╯    ╰───────╯   │  N  │  M  │  ,  │  .  │  /  │ SHIFT │
+			//  └─────────┴┬────┴┬────┴┬────┴┬────┴┬────┴┐                      ┌────┴┬────┴┬────┴┬────┴┬────┴┬────┴───────┘
+			//             │     │ ALT │ GUI │SMBL │BSPC │                      │SPACE│SYSCT│HYPER│     │     │
+			//             └─────┴─────┴─────┴─────┴─────┘                      └─────┴─────┴─────┴─────┴─────┘
 			//
 			bindings = <
-			&kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
-			&kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
-			&kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-			&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-			&kp LGUI &kp SYMBOL &kp BSPC &mo SPC  &kp RET    &kp SPACE  &mo RAISE  &kp RCTRL &kp RALT  &kp RGUI
-			
-			
-			
-			
-			//  ┌─────────┬───┬───┬───┬───┬───┐      ┌───┬───┬───┬───┬───┬───────┐
-			//  │   TAB   │ Q │ W │ E │ R │ T │      │ Y │ U │ I │ O │ P │  F12  │
-			//  ├─────────┼───┼───┼───┼───┼───┤      ├───┼───┼───┼───┼───┼───────┤
-			//  │ ESC/CTL │ A │ S │ D │ F │ G │      │ H │ J │ K │ L │ : │ ENTER │
-			//  ├─────────┼───┼───┼───┼───┼───┤      ├───┼───┼───┼───┼───┼───────┤
-			//  │  SHIFT  │ Z │ X │ C │ V │ B │      │ N │ M │ , │ . │ / │ SHIFT │
-			//  └─────────┴┬──┴──┬┴───┴─┬─┴───┴┐   ┌─┴───┼───┴──┬┴───┴┬──┴───────┘
-			//             │ CMD │ SMBL │ BSPC │   │ SPC │ SYSC │ HPR │
-			//             └─────┴──────┴──────┘   └─────┴──────┴─────┘
-			
-			&lt NUMBER TAB  &kp Q &kp W &kp E  &kp R      &kp T       &kp Y    &kp U      &kp I      &kp O    &kp P     &kp F12
-			&mt LCTRL ESC   &kp A &kp S &kp D  &kp F      &kp G       &kp H    &kp J      &kp K      &kp L    &kp SEMI  &kp ENTER
-			&shftlang       &kp Z &kp X &kp C  &kp V      &kp B       &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-			&kp LGUI &mo SYMBOL &kp BSPC    &kp SPC  &mo SYSCTL &kp HYPER
-			
-			
+			&mo NUMBER     &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                               &kp N6      &kp N7     &kp N8     &kp N9   &kp N0    &kp F12
+			&kp TAB        &kp Q     &kp W     &kp E     &kp R     &kp T                                &kp Y       &kp U      &kp I      &kp O    &kp P     _____
+			&mt LCTRL ESC  &kp A     &kp S     &kp D     &kp F     &kp G                                &kp H       &kp J      &kp K      &kp L    &kp SEMI  &kp ENTER
+			&kp LSHFT      &kp Z     &kp X     &kp C     &kp V     &kp B       &kp C_MUTE    &none      &kp N       &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+			/**/                     ______    &kp LALT  &kp LGUI  &mo SYMBOL  &kp BSPC      &kp SPACE  &mo SYSCTL  &kp HYPER  ______     ______                  /**/
 			>;
 			
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
