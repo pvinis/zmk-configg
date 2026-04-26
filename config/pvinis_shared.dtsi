@@ -10,3 +10,15 @@
 
 #define HYPER    LS(LC(LA(LGUI)))
 #define HYP(key) LS(LC(LA(LG(key))))
+
+#define PV_SP_PLAYPAUSE HYP(N1)
+#define PV_SP_NEXT      HYP(N2)
+#define PV_SP_PREV      HYP(N3)
+#define PV_SP_MUTE      HYP(N4)
+#define PV_SP_VOLD      HYP(N5)
+#define PV_SP_VOLU      HYP(N6)
+// #define PV_NT_TOD       HYP(N7)
+#define PV_RORO         HYP(N8)
+#define PV_SCRSVR       HYP(N9)
+// #define PV_SLEEP   LA(LG(C_POWER))
+
