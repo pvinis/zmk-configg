@@ -1,4 +1,4 @@
-# Pavlos' ZMK Config
+# Pavlos' ZMK Configg
 
 [![Build](https://github.com/pvinis/zmk-configg/actions/workflows/build.yml/badge.svg)](https://github.com/pvinis/zmk-configg/actions/workflows/build.yml)
 
