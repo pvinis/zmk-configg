@@ -26,6 +26,14 @@ or
 zmk download
 ```
 
+| Keyboard | Firmware artifact | Flashing method |
+| --- | --- | --- |
+| `bdn9_rev2` | `bdn9_rev2-zmk.bin` | Flash with QMK Toolbox |
+| `splitkb_aurora_corne_left` | `splitkb_aurora_corne_left-nice_nano_v2-zmk.uf2` | Copy to the mounted bootloader drive |
+| `splitkb_aurora_corne_right` | `splitkb_aurora_corne_right-nice_nano_v2-zmk.uf2` | Copy to the mounted bootloader drive |
+| `sofle_left nice_oled` | `sofle_left-nice_nano_v2-zmk.uf2` | Copy to the mounted bootloader drive |
+| `sofle_right nice_oled` | `sofle_right-nice_nano_v2-zmk.uf2` | Copy to the mounted bootloader drive |
+
 ### BDN9:
 
 - Use the firmware file with QMK Toolbox.
