@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#include "pvinis_shared.dtsi"
+#include "pvinis_keys.dtsi"
 
 &sensors {
 	status = "okay";
@@ -19,16 +19,6 @@
 #define SPOTIFY 1
 #define SYSCTL  2
 
-#define PV_SP_PLAYPAUSE HPR(N1)
-#define PV_SP_NEXT      HPR(N2)
-#define PV_SP_PREV      HPR(N3)
-#define PV_SP_MUTE      HPR(N4)
-#define PV_SP_VOLD      HPR(N5)
-#define PV_SP_VOLU      HPR(N6)
-#define PV_NT_TOD       HPR(N7)
-#define PV_RORO         HPR(N8)
-#define PV_SCRSVR       HPR(N9)
-#define PV_SLEEP   LA(LG(C_POWER))
 
 / {
 	macros {

@@ -1,0 +1,6 @@
+// shared split keyboard layers
+#define QWERTY 0
+#define SYSCTL 1
+#define SYMBOL 2
+#define NUMBER 3
+#define KBCTL  4

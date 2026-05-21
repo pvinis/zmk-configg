@@ -4,7 +4,8 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#include "pvinis_shared.dtsi"
+#include "pvinis_keys.dtsi"
+#include "pvinis_split_layers.dtsi"
 
 / {
 	// activate KBCTL layer by pressing SYSCTL and SYMBOL
