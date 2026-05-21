@@ -14,6 +14,7 @@ manifest:
       import: app/west.yml
     - name: zmk-nice-oled # for sofle oleds
       remote: mctechnology17
-      revision: main
+      # Pin the module for reproducible builds instead of tracking main.
+      revision: 46f824abb2bd41f1287c5c68abd14122af6042a3
   self:
     path: config
