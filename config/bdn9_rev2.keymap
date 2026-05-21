@@ -19,7 +19,6 @@
 #define SPOTIFY 1
 #define SYSCTL  2
 
-#define PV_NT_TOD HPR(N7)
 
 / {
 	macros {

@@ -5,12 +5,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 #include "pvinis_keys.dtsi"
-
-#define QWERTY 0
-#define SYSCTL 1
-#define SYMBOL 2
-#define NUMBER 3
-#define KBCTL  4
+#include "pvinis_split_layers.dtsi"
 
 / {
 	// activate KBCTL layer by pressing SYSCTL and SYMBOL
