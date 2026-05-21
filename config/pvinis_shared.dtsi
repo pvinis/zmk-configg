@@ -22,4 +22,5 @@
 #define PV_RORO         HPR(N8)
 #define PV_SCRSVR       HPR(N9)
 // #define PV_SLEEP   LA(LG(C_POWER))
+#define PV_VOICE        HPR(V)
 

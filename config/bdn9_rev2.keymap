@@ -55,9 +55,9 @@
 
 		BASE_layer {
 			bindings = <
-			&kp C_MUTE   &none             &kp PV_SP_MUTE
-			&mo SPOTIFY  &kp PV_NT_TOD     &mo SYSCTL
-			&kp HPR(V)   &kp C_PLAY_PAUSE  &td_media
+			&kp C_MUTE    &none             &kp PV_SP_MUTE
+			&mo SPOTIFY   &kp PV_NT_TOD     &mo SYSCTL
+			&kp PV_VOICE  &kp C_PLAY_PAUSE  &td_media
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp X X &inc_dec_kp PV_SP_VOLU PV_SP_VOLD>;
 		};
