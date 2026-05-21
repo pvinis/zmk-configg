@@ -1,3 +1,5 @@
 .zmk/
 
 firmware/
+
+.DS_Store
