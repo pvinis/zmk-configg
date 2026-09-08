@@ -1,0 +1,23 @@
+name: Draw keymaps
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/*.keymap"
+      - "config/*.dtsi"
+      - "keymap_drawer.config.yaml"
+      - ".github/workflows/keymap-drawer.yml"
+
+jobs:
+  draw:
+    # Renders keymap-drawer/<keyboard>.svg (+ .yaml) for every config/*.keymap
+    # and commits the result to the branch that triggered the run.
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write
+    with:
+      keymap_patterns: "config/*.keymap"
+      config_path: "keymap_drawer.config.yaml"
+      output_folder: "keymap-drawer"
+      commit_message: "docs: redraw keymaps"
+      amend_commit: false

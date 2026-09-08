@@ -1,0 +1,8 @@
+# Config for https://github.com/caksoylar/keymap-drawer, used by .github/workflows/keymap-drawer.yml
+# to render keymap-drawer/*.svg from config/*.keymap.
+parse_config:
+  # Labels for custom behaviors that keymap-drawer can't infer from the keymap.
+  raw_binding_map:
+    "&td_media": { t: "PLAY PAUSE", h: "x2 NEXT x3 PREV" } # tap dance on the BDN9
+    "&shftlang": { t: "SHIFT", h: "x2 F13" } # tap dance on the Corne
+    "&pv_name": "type name" # macro on the BDN9 that types "bdn9_rev2"

@@ -1,0 +1,32 @@
+layout: {zmk_keyboard: bdn9_rev2}
+layers:
+  BASE:
+  - MUTE
+  - Alt+`
+  - Hyper+4
+  - SPOTIFY
+  - Hyper+7
+  - SYSCTL
+  - Hyper+V
+  - PLAY PAUSE
+  - {t: PLAY PAUSE, h: x2 NEXT x3 PREV}
+  SPOTIFY:
+  - {t: ▽, type: trans}
+  - Hyper+4
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Hyper+3
+  - Hyper+1
+  - Hyper+2
+  SYSCTL:
+  - '&bootloader'
+  - Alt+Gui+POWER
+  - {t: ▽, type: trans}
+  - type name
+  - POWER
+  - {type: held}
+  - {t: ▽, type: trans}
+  - Hyper+9
+  - Hyper+8
