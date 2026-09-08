@@ -2,6 +2,8 @@
 
 [![Build](https://github.com/pvinis/zmk-configg/actions/workflows/build.yml/badge.svg)](https://github.com/pvinis/zmk-configg/actions/workflows/build.yml)
 
+Firmware: [ZMK](https://zmk.dev/) ([docs](https://zmk.dev/docs)). Live remapping over USB: [ZMK Studio](https://zmk.studio/).
+
 ## Keyboards
 
 - BDN9
