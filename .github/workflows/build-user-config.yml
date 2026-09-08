@@ -32,7 +32,7 @@ on:
 
 jobs:
   matrix:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     name: Fetch Build Keyboards
     outputs:
       build_matrix: ${{ env.build_matrix }}
