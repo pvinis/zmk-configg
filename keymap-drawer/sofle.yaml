@@ -1,19 +1,19 @@
 layout: {zmk_keyboard: sofle}
 layers:
   qwerty:
-  - number
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - F12
-  - TAB
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: TAB, h: number}
   - Q
   - W
   - E
@@ -24,7 +24,7 @@ layers:
   - I
   - O
   - P
-  - {t: ▽, type: trans}
+  - F12
   - {t: ESC, h: LCTRL}
   - A
   - S
@@ -37,30 +37,30 @@ layers:
   - L
   - ;
   - ENTER
-  - LSHFT
+  - {t: SHIFT, h: x2 F13}
   - Z
   - X
   - C
   - V
   - B
-  - MUTE
-  - Hyper+4
+  - ''
+  - ''
   - N
   - M
   - ','
   - .
   - /
   - RSHFT
-  - {t: ▽, type: trans}
-  - LALT
+  - ''
+  - ''
   - LGUI
   - symbol
   - BSPC
-  - SPACE
+  - SPC
   - sysctl
   - Meh+LGUI
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
   sysctl:
   - ''
   - ''
@@ -68,11 +68,11 @@ layers:
   - ''
   - ''
   - ''
-  - MUTE
-  - HOME
-  - UP
-  - END
-  - SLEEP
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - ''
   - ''
   - F1
@@ -80,11 +80,11 @@ layers:
   - F3
   - F4
   - F5
-  - VOL UP
-  - LEFT
-  - DOWN
-  - RIGHT
-  - AL SCREENSAVER
+  - MUTE
+  - HOME
+  - UP
+  - END
+  - SLEEP
   - ''
   - ''
   - F6
@@ -92,11 +92,11 @@ layers:
   - F8
   - F9
   - F10
-  - VOL DN
-  - PREV
-  - PLAY PAUSE
-  - NEXT
-  - AL LOCK
+  - VOL UP
+  - LEFT
+  - DOWN
+  - RIGHT
+  - AL SCREENSAVER
   - ''
   - ''
   - F11
@@ -106,35 +106,35 @@ layers:
   - ''
   - ''
   - ''
+  - VOL DN
+  - PREV
+  - PLAY PAUSE
+  - NEXT
+  - AL LOCK
   - ''
   - ''
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - LGUI
+  - {t: ▽, type: trans}
+  - SPACE
   - ''
   - {type: held}
-  - ''
+  - RALT
   - ''
   - ''
   symbol:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - {t: BT, h: '0'}
   - '!'
   - '@'
@@ -165,38 +165,38 @@ layers:
   - '['
   - ']'
   - +
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
   - '*'
   - '~'
   - <
   - '>'
   - /
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
   - ''
   - {type: held}
   - ''
   - ''
   - {t: ▽, type: trans}
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
   number:
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
   - '1'
   - '2'
   - '3'
@@ -226,37 +226,37 @@ layers:
   - ''
   - ''
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
   - '0'
   - '1'
   - '2'
   - '3'
   - ''
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
   - ''
   - {t: ▽, type: trans}
   - ''
   - '0'
   - {t: ▽, type: trans}
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
   kbctl:
-  - {t: ▽, type: trans}
-  - RGB TOG
-  - RGB EFF
-  - RGB BRI
-  - RGB BRD
-  - EP TOG
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - ''
   - ''
   - ''
@@ -285,23 +285,23 @@ layers:
   - ''
   - ''
   - ''
+  - RGB EFF
+  - RGB TOG
   - ''
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - ''
   - OUT TOG
   - ''
   - ''
   - ''
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
   - ''
   - {type: held}
   - ''
   - ''
   - {type: held}
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - ''
