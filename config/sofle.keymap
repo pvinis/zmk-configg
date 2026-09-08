@@ -9,7 +9,8 @@
 #include "pvinis_split_layers.dtsi"
 
 // Same layout as the Corne (see pvinis_split_layers.dtsi). The Sofle's extra keys, the number
-// row, the two encoder clicks and the outer two thumb keys per side, are deliberately unused.
+// row, the two encoder clicks and the outermost thumb key on each side, are deliberately unused.
+// The Corne's three thumb keys sit on the middle three of the Sofle's five.
 // Only the encoders' rotation is Sofle-specific: left is volume, right is Spotify volume
 // (page up/down on sysctl).
 // Drawing: keymap-drawer/sofle.svg
@@ -34,7 +35,7 @@
 			QWERTY_L1                QWERTY_R1
 			QWERTY_L2                QWERTY_R2
 			QWERTY_L3  &none    &none  QWERTY_R3
-			NONE_X2  QWERTY_LT       QWERTY_RT  NONE_X2
+			&none  QWERTY_LT  &none      &none  QWERTY_RT  &none
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PV_SP_VOLU PV_SP_VOLD>;
@@ -47,7 +48,7 @@
 			SYSCTL_L1                SYSCTL_R1
 			SYSCTL_L2                SYSCTL_R2
 			SYSCTL_L3  &none    &none  SYSCTL_R3
-			NONE_X2  SYSCTL_LT       SYSCTL_RT  NONE_X2
+			&none  SYSCTL_LT  &none      &none  SYSCTL_RT  &none
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -60,7 +61,7 @@
 			SYMBOL_L1                SYMBOL_R1
 			SYMBOL_L2                SYMBOL_R2
 			SYMBOL_L3  &none    &none  SYMBOL_R3
-			NONE_X2  SYMBOL_LT       SYMBOL_RT  NONE_X2
+			&none  SYMBOL_LT  &none      &none  SYMBOL_RT  &none
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PV_SP_VOLU PV_SP_VOLD>;
@@ -73,7 +74,7 @@
 			NUMBER_L1                NUMBER_R1
 			NUMBER_L2                NUMBER_R2
 			NUMBER_L3  &none    &none  NUMBER_R3
-			NONE_X2  NUMBER_LT       NUMBER_RT  NONE_X2
+			&none  NUMBER_LT  &none      &none  NUMBER_RT  &none
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PV_SP_VOLU PV_SP_VOLD>;
@@ -86,7 +87,7 @@
 			KBCTL_L1                KBCTL_R1
 			KBCTL_L2                KBCTL_R2
 			KBCTL_L3  &none    &none  KBCTL_R3
-			NONE_X2  KBCTL_LT       KBCTL_RT  NONE_X2
+			&none  KBCTL_LT  &none      &none  KBCTL_RT  &none
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PV_SP_VOLU PV_SP_VOLD>;
