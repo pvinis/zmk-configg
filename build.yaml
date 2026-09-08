@@ -5,7 +5,17 @@ include:
     shield: splitkb_aurora_corne_left
   - board: nice_nano_v2
     shield: splitkb_aurora_corne_right
+  # Sofle: KeebMaker wireless build (nice!nano v2, 128x32 OLEDs, encoders, WS2812 underglow).
+  # ZMK Studio runs only on the left half (the central one) and needs the USB-UART RPC snippet.
   - board: nice_nano_v2
     shield: sofle_left nice_oled
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
+    artifact-name: sofle_left-nice_nano_v2-zmk
   - board: nice_nano_v2
     shield: sofle_right nice_oled
+    artifact-name: sofle_right-nice_nano_v2-zmk
+  # Flash to BOTH Sofle halves if they stop pairing with each other, then reflash the real firmware.
+  - board: nice_nano_v2
+    shield: settings_reset
+    artifact-name: settings_reset-nice_nano_v2-zmk
