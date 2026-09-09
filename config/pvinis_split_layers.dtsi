@@ -4,3 +4,76 @@
 #define SYMBOL 2
 #define NUMBER 3
 #define KBCTL  4
+
+// The Corne is the reference layout: three rows of six keys per side plus three thumb keys
+// per side. Every split keyboard builds its layers from the rows below, so they can't drift
+// apart. Boards with more keys (Sofle) fill the extra positions with &none.
+//
+//   <LAYER>_L1 .. _L3 / _R1 .. _R3  left / right rows, six bindings each
+//   <LAYER>_LT / _RT                left / right thumbs, three bindings each
+
+#define NONE_X2  &none &none
+#define NONE_X6  &none &none &none &none &none &none
+
+// qwerty
+//  ┌─────────┬───┬───┬───┬───┬───┐      ┌───┬───┬───┬───┬───┬───────┐
+//  │ TAB/NUM │ Q │ W │ E │ R │ T │      │ Y │ U │ I │ O │ P │  F12  │
+//  ├─────────┼───┼───┼───┼───┼───┤      ├───┼───┼───┼───┼───┼───────┤
+//  │ ESC/CTL │ A │ S │ D │ F │ G │      │ H │ J │ K │ L │ ; │ ENTER │
+//  ├─────────┼───┼───┼───┼───┼───┤      ├───┼───┼───┼───┼───┼───────┤
+//  │  SHIFT  │ Z │ X │ C │ V │ B │      │ N │ M │ , │ . │ / │ SHIFT │
+//  └─────────┴┬──┴──┬┴───┴─┬─┴───┴┐   ┌─┴───┼───┴──┬┴───┴┬──┴───────┘
+//             │ CMD │ SMBL │ BSPC │   │ SPC │ SYSC │ HPR │
+//             └─────┴──────┴──────┘   └─────┴──────┴─────┘
+#define QWERTY_L1  &lt NUMBER TAB  &kp Q  &kp W  &kp E  &kp R  &kp T
+#define QWERTY_R1  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp F12
+#define QWERTY_L2  &mt LCTRL ESC  &kp A  &kp S  &kp D  &kp F  &kp G
+#define QWERTY_R2  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp ENTER
+#define QWERTY_L3  &shftlang  &kp Z  &kp X  &kp C  &kp V  &kp B
+#define QWERTY_R3  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+#define QWERTY_LT  &kp LGUI  &mo SYMBOL  &kp BSPC
+#define QWERTY_RT  &kp SPC  &mo SYSCTL  &kp HYPER
+
+// sysctl: F keys on the left, navigation and media on the right
+#define SYSCTL_L1  &none  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5
+#define SYSCTL_R1  &kp C_MUTE    &kp HOME    &kp UP            &kp END     &kp C_SLEEP           &none
+#define SYSCTL_L2  &none  &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
+#define SYSCTL_R2  &kp C_VOL_UP  &kp LEFT    &kp DOWN          &kp RIGHT   &kp C_AL_SCREENSAVER  &none
+#define SYSCTL_L3  &none  &kp F11  &kp F12  &none   &none   &none
+#define SYSCTL_R3  &kp C_VOL_DN  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_AL_LOCK         &none
+#define SYSCTL_LT  &kp LGUI  &trans  &kp SPACE
+#define SYSCTL_RT  &none  &trans  &kp RALT
+
+// symbol
+// !@{}_ \ `
+// #$()- =&'"|
+// %^[]+ *~<>/
+#define SYMBOL_L1  &bt BT_SEL 0  &kp EXCL   &kp AT     &kp LBRC  &kp RBRC  &kp UNDER
+#define SYMBOL_R1  &kp BSLH   &none      &kp GRAVE  &none    &none     &none
+#define SYMBOL_L2  &bt BT_SEL 1  &kp HASH   &kp DLLR   &kp LPAR  &kp RPAR  &kp MINUS
+#define SYMBOL_R2  &kp EQUAL  &kp AMPS   &kp SQT    &kp DQT  &kp PIPE  &none
+#define SYMBOL_L3  &bt BT_CLR    &kp PRCNT  &kp CARET  &kp LBKT  &kp RBKT  &kp PLUS
+#define SYMBOL_R3  &kp ASTRK  &kp TILDE  &kp LT     &kp GT   &kp FSLH  &none
+#define SYMBOL_LT  &none  &trans  &none
+#define SYMBOL_RT  &none  &trans  &none
+
+// number: number row on the left, numpad on the right
+#define NUMBER_L1  &none  &kp N1   &kp N2  &kp N3  &kp N4  &kp N5
+#define NUMBER_R1  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &none
+#define NUMBER_L2  &none  &kp F14  &none   &none   &none   &none
+#define NUMBER_R2  &none   &kp N4  &kp N5  &kp N6  &none   &none
+#define NUMBER_L3  &none  &kp F15  &none   &none   &none   &none
+#define NUMBER_R3  &kp N0  &kp N1  &kp N2  &kp N3  &none   &none
+#define NUMBER_LT  &none  &trans  &none
+#define NUMBER_RT  &kp N0  &trans  &none
+
+// kbctl (hold SYSCTL + SYMBOL): bootloader on R, output toggle on M,
+// underglow effect on V and underglow on/off on B (does nothing on boards without underglow)
+#define KBCTL_L1   &none  &none  &none  &none  &bootloader      &none
+#define KBCTL_R1   &none  &bootloader   &none   &none   &none  &none
+#define KBCTL_L2   &none  &none  &none  &none  &none            &none
+#define KBCTL_R2   &none  &kp N4        &kp N5  &kp N6  &none  &none
+#define KBCTL_L3   &none  &none  &none  &none  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
+#define KBCTL_R3   &none  &out OUT_TOG  &none   &none   &none  &none
+#define KBCTL_LT   &none  &trans  &none
+#define KBCTL_RT   &none  &trans  &none

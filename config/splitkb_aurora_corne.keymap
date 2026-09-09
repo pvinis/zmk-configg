@@ -2,38 +2,16 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
 
 #include "pvinis_keys.dtsi"
+#include "pvinis_behaviors.dtsi"
 #include "pvinis_split_layers.dtsi"
 
+// The layers live in pvinis_split_layers.dtsi; this keymap is the reference layout.
+// Drawing: keymap-drawer/splitkb_aurora_corne.svg
+
 / {
-	// tap dance
-	behaviors {
-		shftcaps: tap_dance_0 {
-			compatible = "zmk,behavior-tap-dance";
-			label = "TAP_DANCE_0";
-			#binding-cells = <0>;
-			tapping-term-ms = <200>;
-			bindings = <&kp LSHFT>, <&caps_word>;
-		};
-		shftlang: tap_dance_1 {
-			compatible = "zmk,behavior-tap-dance";
-			label = "TAP_DANCE_1";
-			#binding-cells = <0>;
-			tapping-term-ms = <200>;
-			bindings = <&kp LSHFT>, <&kp F13>;
-		};
-		lh_pht: left_positional_hold_tap {
-			compatible = "zmk,behavior-hold-tap";
-			#binding-cells = <2>;
-			flavor = "tap-unless-interrupted";
-			tapping-term-ms = <100>;// <---[[produces tap if held longer than tapping-term-ms]]
-			quick-tap-ms = <200>;
-			bindings = <&kp>, <&kp>;
-			hold-trigger-key-positions = <5 6 7 8 9 10>;// <---[[right-hand keys]]
-		};
-	};
-	
 	conditional_layers {
 		compatible = "zmk,conditional-layers";
 		tri_layer {
@@ -41,81 +19,52 @@
 			then-layer = <KBCTL>;
 		};
 	};
-	
+
 	keymap {
 		compatible = "zmk,keymap";
-		
-		
+
 		qwerty_layer {
-			//  ┌─────────┬───┬───┬───┬───┬───┐      ┌───┬───┬───┬───┬───┬───────┐
-			//  │   TAB   │ Q │ W │ E │ R │ T │      │ Y │ U │ I │ O │ P │  F12  │
-			//  ├─────────┼───┼───┼───┼───┼───┤      ├───┼───┼───┼───┼───┼───────┤
-			//  │ ESC/CTL │ A │ S │ D │ F │ G │      │ H │ J │ K │ L │ : │ ENTER │
-			//  ├─────────┼───┼───┼───┼───┼───┤      ├───┼───┼───┼───┼───┼───────┤
-			//  │  SHIFT  │ Z │ X │ C │ V │ B │      │ N │ M │ , │ . │ / │ SHIFT │
-			//  └─────────┴┬──┴──┬┴───┴─┬─┴───┴┐   ┌─┴───┼───┴──┬┴───┴┬──┴───────┘
-			//             │ CMD │ SMBL │ BSPC │   │ SPC │ SYSC │ HPR │
-			//             └─────┴──────┴──────┘   └─────┴──────┴─────┘
 			bindings = <
-			&lt NUMBER TAB  &kp Q &kp W &kp E  &kp R      &kp T       &kp Y    &kp U      &kp I      &kp O    &kp P     &kp F12
-			&mt LCTRL ESC   &kp A &kp S &kp D  &kp F      &kp G       &kp H    &kp J      &kp K      &kp L    &kp SEMI  &kp ENTER
-			&shftlang       &kp Z &kp X &kp C  &kp V      &kp B       &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-			&kp LGUI &mo SYMBOL &kp BSPC    &kp SPC  &mo SYSCTL &kp HYPER
+			QWERTY_L1  QWERTY_R1
+			QWERTY_L2  QWERTY_R2
+			QWERTY_L3  QWERTY_R3
+			QWERTY_LT  QWERTY_RT
 			>;
 		};
-		
+
 		sysctl_layer {
-			// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-			// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-			// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-			//                    | GUI |     | SPC |   | ENT |     | ALT |
 			bindings = <
-			&none  &kp F1   &kp F2   &kp F3    &kp F4  &kp F5       &kp C_MUTE    &kp HOME    &kp UP            &kp END     &kp C_SLEEP           &none
-			&none  &kp F6   &kp F7   &kp F8    &kp F9  &kp F10      &kp C_VOL_UP  &kp LEFT    &kp DOWN          &kp RIGHT   &kp C_AL_SCREENSAVER  &none
-			&none  &kp F11  &kp F12  &none     &none   &none        &kp C_VOL_DN  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_AL_LOCK         &none
-			&kp LGUI  &trans  &kp SPACE    &none         &trans      &kp RALT
+			SYSCTL_L1  SYSCTL_R1
+			SYSCTL_L2  SYSCTL_R2
+			SYSCTL_L3  SYSCTL_R3
+			SYSCTL_LT  SYSCTL_RT
 			>;
 		};
-		
+
 		symbol_layer {
-			// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-			// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-			// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-			//                    | GUI |     | SPC |   | ENT |     | ALT |
-			// !@{}_ \ `
-			// #$()- =&'"|
-			// %^[]+ *~<>/
 			bindings = <
-			&bt BT_SEL 0  &kp EXCL   &kp AT     &kp LBRC  &kp RBRC  &kp UNDER    &kp BSLH   &none      &kp GRAVE  &none    &none     &none
-			&bt BT_SEL 1  &kp HASH   &kp DLLR   &kp LPAR  &kp RPAR  &kp MINUS    &kp EQUAL  &kp AMPS   &kp SQT    &kp DQT  &kp PIPE  &none
-			&bt BT_CLR    &kp PRCNT  &kp CARET  &kp LBKT  &kp RBKT  &kp PLUS     &kp ASTRK  &kp TILDE  &kp LT     &kp GT   &kp FSLH  &none
-			&none     &trans    &none        &none      &trans     &none
+			SYMBOL_L1  SYMBOL_R1
+			SYMBOL_L2  SYMBOL_R2
+			SYMBOL_L3  SYMBOL_R3
+			SYMBOL_LT  SYMBOL_RT
 			>;
 		};
-		
+
 		number_layer {
-			// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-			// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-			// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-			//                    | GUI |     | SPC |   | ENT |     | ALT |
 			bindings = <
-			&none  &kp N1   &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &none
-			&none  &kp F14  &none   &none   &none   &none     &none   &kp N4  &kp N5  &kp N6  &none   &none
-			&none  &kp F15  &none   &none   &none   &none     &kp N0  &kp N1  &kp N2  &kp N3  &none   &none
-			&none   &trans  &none     &kp N0  &trans  &none
+			NUMBER_L1  NUMBER_R1
+			NUMBER_L2  NUMBER_R2
+			NUMBER_L3  NUMBER_R3
+			NUMBER_LT  NUMBER_RT
 			>;
 		};
-		
+
 		kbctl_layer {
-			// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-			// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-			// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-			//                    | GUI |     | SPC |   | ENT |     | ALT |
 			bindings = <
-			&none  &none  &none  &none  &bootloader  &none    &none  &bootloader   &none   &none   &none  &none
-			&none  &none  &none  &none  &none        &none    &none  &kp N4        &kp N5  &kp N6  &none  &none
-			&none  &none  &none  &none  &none        &none    &none  &out OUT_TOG  &none   &none   &none  &none
-			&none  &trans       &none    &none  &trans        &none
+			KBCTL_L1  KBCTL_R1
+			KBCTL_L2  KBCTL_R2
+			KBCTL_L3  KBCTL_R3
+			KBCTL_LT  KBCTL_RT
 			>;
 		};
 	};
@@ -127,14 +76,3 @@
 // TODO: game mode
 
 // TODO: screenshot button
-
-// template
-//  ┌──┬──┬──┬──┬──┬──┐      ┌──┬──┬──┬──┬──┬──┐
-//  │  │  │  │  │  │  │      │  │  │  │  │  │  │
-//  ├──┼──┼──┼──┼──┼──┤      ├──┼──┼──┼──┼──┼──┤
-//  │  │  │  │  │  │  │      │  │  │  │  │  │  │
-//  ├──┼──┼──┼──┼──┼──┤      ├──┼──┼──┼──┼──┼──┤
-//  │  │  │  │  │  │  │      │  │  │  │  │  │  │
-//  └──┴──┴──┴─┬┴─┬┴─┬┴─┐   ┌┴─┬┴─┬┴─┬┴──┴──┴──┘
-//             │  │  │  │   │  │  │  │
-//             └──┴──┴──┘   └──┴──┴──┘
