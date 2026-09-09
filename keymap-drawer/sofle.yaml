@@ -52,14 +52,14 @@ layers:
   - /
   - RSHFT
   - ''
+  - ''
   - LGUI
   - symbol
   - BSPC
-  - ''
-  - ''
   - SPC
   - sysctl
   - Meh+LGUI
+  - ''
   - ''
   sysctl:
   - ''
@@ -113,14 +113,14 @@ layers:
   - AL LOCK
   - ''
   - ''
+  - ''
   - LGUI
   - {t: ▽, type: trans}
   - SPACE
   - ''
-  - ''
-  - ''
   - {type: held}
   - RALT
+  - ''
   - ''
   symbol:
   - ''
@@ -175,12 +175,12 @@ layers:
   - ''
   - ''
   - ''
+  - ''
   - {type: held}
   - ''
   - ''
-  - ''
-  - ''
   - {t: ▽, type: trans}
+  - ''
   - ''
   - ''
   number:
@@ -236,12 +236,12 @@ layers:
   - ''
   - ''
   - ''
+  - ''
   - {t: ▽, type: trans}
-  - ''
-  - ''
   - ''
   - '0'
   - {t: ▽, type: trans}
+  - ''
   - ''
   - ''
   kbctl:
@@ -297,11 +297,11 @@ layers:
   - ''
   - ''
   - ''
-  - {type: held}
-  - ''
-  - ''
-  - ''
   - ''
   - {type: held}
+  - ''
+  - ''
+  - {type: held}
+  - ''
   - ''
   - ''
