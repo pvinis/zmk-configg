@@ -55,7 +55,7 @@
 #define SYMBOL_L3  &bt BT_CLR    &kp PRCNT  &kp CARET  &kp LBKT  &kp RBKT  &kp PLUS
 #define SYMBOL_R3  &kp ASTRK  &kp TILDE  &kp LT     &kp GT   &kp FSLH  &none
 #define SYMBOL_LT  &none  &trans  &none
-#define SYMBOL_RT  &none  &trans  &none
+#define SYMBOL_RT  &trans  &trans  &none
 
 // number: number row on the left, numpad on the right
 #define NUMBER_L1  &none  &kp N1   &kp N2  &kp N3  &kp N4  &kp N5
